@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1024548004446",
+    "firebase_url": "https://hotelapp-b4884.firebaseio.com",
+    "project_id": "hotelapp-b4884",
+    "storage_bucket": "hotelapp-b4884.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024548004446:android:473f895bd553e866",
+        "android_client_info": {
+          "package_name": "hr.ferit.iskoric.hotelapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1024548004446-gc1bp30mt971bt8mgpa48h0s3qghggqr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_vc_ayuSXttjnGJ7T6h-H1Zbo-fn-NRc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
