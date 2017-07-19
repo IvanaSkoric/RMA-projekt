@@ -24,6 +24,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText et_email;
     private EditText et_password;
     private TextView tvRegister;
+
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
 
@@ -31,7 +32,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        progressDialog = new ProgressDialog(this);
+
         firebaseAuth=FirebaseAuth.getInstance();
         if(firebaseAuth.getCurrentUser() !=null)
         {
@@ -39,30 +40,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             //profile activity here
             startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
         }
+
+
+
         et_email= (EditText) findViewById(R.id.et_email);
         et_password= (EditText) findViewById(R.id.et_password);
-        btnSignin= (Button) findViewById(R.id.btn_register);
+        btnSignin= (Button) findViewById(R.id.btn_Signin);
         tvRegister= (TextView) findViewById(R.id.tvRegister);
 
+        progressDialog = new ProgressDialog(this);
+
         btnSignin.setOnClickListener(this);
-//        tvRegister.setOnClickListener(this);}
+        tvRegister.setOnClickListener(this);}
 
 
-
-    public void onClick(View v) {
-
-        if (v==btnSignin)
-        {
-            userLogin();
-        }
-
-        /*if(v==tvRegister)
-        {
-            finish();
-            startActivity(new Intent(this, RegisterActivity.class));
-        }*/
-
-    }
 
     private void userLogin() {
 
@@ -83,7 +74,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             //stopping the function execution further
             return;
         }
-        progressDialog.setMessage("Loggin User...");
+
+        progressDialog.setMessage("Log in...");
         progressDialog.show();
 
         firebaseAuth.signInWithEmailAndPassword(email, password)
@@ -103,6 +95,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 });
 
 
+
+    }
+
+
+    @Override
+    public void onClick(View v) {
+
+        if (v == btnSignin)
+        {
+            userLogin();
+        }
+
+        if(v == tvRegister)
+        {
+            finish();
+            startActivity(new Intent(this, RegisterActivity.class));
+        }
 
     }
 }
